@@ -25,7 +25,7 @@
 + ` $ git checkout -- <file>  `
 	- 一种 readme.md修改后没有放到暂存区（git add ）,现在撤销就回到和版本库一模一样的状态。 `
 	- 一种 readme.md修改后已经放到暂存区，又做了修改，现在，撤销修改就回到添加到暂存区后的状态。 `
-	- -- 很重要，如果没有--就变成切换到另一个分支 `
+	- -- 很重要，如果没有--就变成切换到另一个分支 
 ### 撤销暂存区修改
 + ` $ git reset HEAD <file> `
 ### 删除文件 
@@ -39,4 +39,6 @@
 	- 远程库的名字 Git-learn
 ### 把本地文库内容全部推送到远程库上
 + ` $ git push  -u Git-learn master `
-### 
+### 从远程仓库克隆
++ ` $ git clone  git@github.com:liule0206/Git-learn.git `
+
