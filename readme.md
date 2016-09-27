@@ -1,4 +1,4 @@
-# GIT学习
+## GIT学习
 ### Git 初始化
 + ``` bash git init  ```
 ### 查看git 状态
