@@ -38,7 +38,10 @@
 	- liule0206 换成自己的用户名
 	- 远程库的名字 Git-learn
 ### 把本地文库内容全部推送到远程库上
-+ ` $ git push  -u Git-learn master `
++ 第一次提交
+	- ` $ git push  -u Git-learn master `
++ 以后每次提交
+	- ` $ git push origin master `
 ### 从远程仓库克隆
 + ` $ git clone  git@github.com:liule0206/Git-learn.git `
 
