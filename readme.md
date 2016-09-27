@@ -83,3 +83,19 @@
 >$ git clone  git@github.com:liule0206/Git-learn.git
 >```
 
+### 创建分支
+```bush 
+$ git checkout -b dev
+```
++ `git checkout`命令加上`-b`参数表示创建并切换，相当于以下命令
+```bush 
+$ git branch dev
+$ git checkout dev
+```
+### 查看分支
+```bush 
+$ git branch
+```
++ `git branch` 命令会列出所有分支，当前分支前面会有一个`*`号
+
+
