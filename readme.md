@@ -3,3 +3,9 @@
 		+ git init 
 	# 查看git 状态
  		+ git status
+	# 查看修改
+		+ git diff 
+	# 文件上传
+		+ git add 文件名
+		+ git commit -m '说明'
+	
