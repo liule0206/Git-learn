@@ -24,3 +24,15 @@
 			`` -- 很重要，如果没有--就变成切换到另一个分支
 	# 撤销暂存区修改
 		+ git reset HEAD <file>
+	# 删除文件 
+		+ 删除已提交文件 
+			- git rm <file>
+		+ 本地文件删除了，但是服务器上没有删除
+			- git checkout -- <file>
+	# 将本地文件添加到远程仓库
+		+ git remote add origin git@github.com:liule0206/Git-learn.git
+			- liule0206 换成自己的用户名
+			- 远程库的名字 Git-learn
+	# 把本地文库内容全部推送到远程库上
+		+ git push  -u Git-learn master
+	# 
