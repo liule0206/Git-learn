@@ -98,4 +98,19 @@ $ git branch
 ```
 + `git branch` 命令会列出所有分支，当前分支前面会有一个`*`号
 
+### 将`dev`分支合并到`master`
+```bush
+$ git checkout master #切换到`master`分支上
+$ git merge dev 
+```
++ `git merge`命令用于合并指定`(dev)`到当前分支。
+
+### 删除分支
+```bush 
+$ git branch -d dev
+```
++ `-d` 表示删除
+
+
+
 
