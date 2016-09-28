@@ -208,4 +208,73 @@
 >+ 建立本地分支和远程分支的关联，使用`git branch --set-upstream branch-name origin/branch-name`；
 >+ 从远程抓取分支，使用`git pull`，如果有冲突，要先处理冲突。
 
-##
+## 标签管理
+>### 添加标签
+>+ 可以通过`git tag <name>`添加新标签，
+>+ 例如给dev分支添加标签v0.0.5,命令如下：
+>```bush
+>$ git branch  
+>$ git checkout dev
+>$ git tag v0.0.5
+>```
+>+ 可以用命令`git tag` 查看所有标签
+>```bush
+>$ git tag
+>v0.0.5
+>```
+>+ 如果历史版本忘记打标签可以通过commit id添加标签
+>```bush
+>$ git log --pretty=online --abbrev-commit
+>$ git tag v0.0.2 6222222
+>```
+>+ `6222222`是对应提交记录的id
+>+ * 标签不是按照时间顺序排序，而是按照字母顺序排序的
+>+ 可以用过`git show <tagname>`查看标签信息
+>```bush
+>$ git show v0.0.2
+>```
+>+ 可以创建带有说明的标签，用`-a` 指定标签名，用`-m`指定标签说明文字；
+>```bush
+>$ git tag -a v0.0.3 -m "version 0.0.2 branch" 278b662
+>```
+>+ 还可以通过`-s`用私钥签名一个标签：
+>```bush
+>$ git tag -s v0.0.5 -m "signed version 0.0.5 dev" 394dd44
+>
+>error: cannot run gpg: No such file or directory
+>error: could not run gpg.
+>error: unable to sign the tag
+>```
+>+ 签名采用PGP签名，因为没有安装gpg（GunPG），
+>+ 同样使用`git show <tagname>`查看PGP签名信息
+>### 小结
+>* 命令`git tag <name>`用于新建一个标签，默认为`HEAD`，也可以指定一个commit id；
+>* `git tag -a <tagname> -m "xinxixinxixinxi..."`可以指定标签信息；
+>* `git tag -s <tagname> -m "xinxixinxixinxi..."`可以用PGP签名标签；
+>* 命令`git tag`可以查看所有标签。
+>###操作标签
+>+ 如果标签打错了，也可以删除：
+>```bushh
+>$ git tag -d v0.0.0
+>```
+>+ 因为创建的标签都只存在本地，不会自动推送到远程，所以，打错的标签可以在本地安全删除。
+>+ 如果要推送某个标签到远程，使用命令`git push origin <tagname>`;
+>```bush
+>$ git push origin v0.0.1
+>```
+>+ 或者，一次性推送全部尚未推送到远程的本地标签：
+>```bush
+>$ git push origin  --tags
+>```
+>+ 如果标签已经推送到远程，要删除需要先删除本地标签，然后，从远程删除，删除命令也是`push`,命令如下：
+>```bush
+>$ git tag -d v0.0.1
+>$ git push origin :refs/tags/v0.0.1
+>```
+>### 小结
+>* 命令`git push origin <tagname>`可以推送一个本地标签；
+>* 命令`git push origin --tags`可以推送全部未推送过的本地标签；
+>* 命令`git tag -d <tagname>`可以上删除一个本地标签；
+>* 命令`git push origin :refs/tags/<tagname>`可以删除一个远程标签。
+
+
