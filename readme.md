@@ -127,7 +127,46 @@
 >* 删除分支：`git branch -d <name>`
 
 ## 分支管理-解决冲突
->### 
+>* 因为用了VScode，有冲突不允许保存，需要先解决冲突才可以。
+>+ 查看分支合并图
+>```bush
+>$ git log --graph
+>```
+
+## 分支管理-分支管理策略
+>### 分支合并参数
+>+ 通常，合并分支时，如果可能，Git会用Fast forward模式，但这种模式下，删除分支后，会丢掉分支信息。如果要强制禁用Fast forward模式，Git就会在merge时生成一个新的commit，这样，从分支历史上就可以看出分支信息。
+>```bush
+>$ git merge --no-off -m "merge with no-ff" dev
+>```
+>+ `--no-ff`参数，表示禁用`Fast forward`；
+>+ 
+
+## 分支管理-贮藏（修复BUG）
+>### 贮藏代码
+>```bush
+>$ git stash 
+>```
+>### 查看贮藏的代码
+>```bush 
+>$ git stash list 
+>```
+>### 取出贮藏的代码
+>```bush
+>$ git stash apply
+>$ git stash drop
+>```
+>+ `apply`将代码恢复，`drop`删除`stash`中保存的记录
+>+ 也可以通过如下命令直接恢复并删除
+>```bush
+>$ git stash pop
+>```
+>+ 可以多次`stash`,恢复的时候先用`git stash list`查看，然后恢复指定的stash，用命令
+>```bush
+>$ git stash apply stash@{0}
+>```
+
+## 分支管理-远程协作
 
 
 
