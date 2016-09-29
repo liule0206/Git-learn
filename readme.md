@@ -277,4 +277,50 @@
 >* 命令`git tag -d <tagname>`可以上删除一个本地标签；
 >* 命令`git push origin :refs/tags/<tagname>`可以删除一个远程标签。
 
+##自定义Git
+>+ 让Git显示颜色，会让命令输出看起来更醒目：
+>```bush
+>git config --global color.ui true
+>```
+>### 配置别名
+>+ 如`git status`想要简写成`git st`
+>```bush
+>$ git config --global alias.st status
+>$ git config --global alias.ci commit
+>$ git config --global alias.br branch
+>```
+>+ 以后提交就可以写成：
+>```bush
+>$ git ci -m "bala bala balb..."
+>```
+>+ `--global`参数是全局参数，也就是这些命令在这台电脑的所有Git仓库下都有用。
+>+ 命令`git reset HEAD file`可以把暂存区的修改撤销掉(unstage),重新放回工作区。既然是一个unstage操作，就可以配置一个`unstage`别名：
+>```bush
+>$ git config --global alias.unstage 'reset HEAD'
+>```
+>+ 当你敲如命令
+>```bush 
+>$ git unstage readme.md
+>```
+>+ 实际上Git执行的是：
+>```bush
+>$ git reset HEAD readme.md
+>```
+>+ 这样用`git last`，让其显示最后一次提交信息：
+>```bush
+>$ git config --global alias.last 'log -1'
+>```
+>+ 来点狠的`lg`
+>```bush
+>$ git config --global alias.lg "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
+>```
+>+ 有木有感觉很方便，很方便！好激动的说。
+>### 配置文件
+>+ 配置Git的时候，加上`--global`是针对当前用户起作用的，如果不加，那只针对当前的仓库起作用。
+>+ 每个仓库的Git配置文件都放在了`.git/config`文件夹中。
+>+ 别名就在`[alias]`后面，要删除别名，删除对应行就可以。配置别名也可以直接修改这个文件。
+
+##其他
+
+
 
