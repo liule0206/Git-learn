@@ -1,4 +1,5 @@
 # GIT学习
++ 摘录自 廖雪峰的官方网站<http://www.liaoxuefeng.com/>Git教程
 ## 基本
 > ### Git 初始化
 >```bush 
